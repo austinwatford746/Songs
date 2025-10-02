@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Austin Watford - My Songs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #181818;
+      color: #fff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 2em;
+      background: #232323;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #0008;
+    }
+    h1 {
+      text-align: center;
+      color: #ff5500;
+      margin-bottom: .5em;
+    }
+    p {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 2em;
+    }
+    .soundcloud-embed {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2em;
+    }
+    .credit {
+      text-align: center;
+      color: #777;
+      margin-top: 2em;
+      font-size: 0.95em;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1em;
+      }
+      .soundcloud-embed iframe {
+        width: 100% !important;
+        min-width: 200px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎵 Austin Watford – My Songs</h1>
+    <p>
+      Listen & download my latest tracks below. <br>
+      As soon as I publish new music on SoundCloud, it appears here automatically!
+    </p>
+    <div class="soundcloud-embed">
+      <!-- This widget auto-lists your latest tracks! -->
+      <iframe 
+        width="100%" height="450" 
+        scrolling="no" frameborder="no" 
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/austin-watford-289522538&color=%23ff5500&auto_play=false&show_artwork=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+      </iframe>
+    </div>
+    <div class="credit">
+      This page auto-updates from <a href="https://soundcloud.com/austin-watford-289522538" style="color:#ff5500;" target="_blank">my SoundCloud</a>.<br>
+      Built with ❤️ and hosted on <a href="https://pages.github.com/" style="color:#ff5500;" target="_blank">GitHub Pages</a>.
+    </div>
+  </div>
+</body>
+</html>
