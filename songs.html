@@ -41,6 +41,52 @@
       margin-top: 2em;
       font-size: 0.95em;
     }
+    .download-btn {
+      margin-top: 1em;
+      display: inline-block;
+      background: #ff5500;
+      color: #fff;
+      padding: 0.5em 1.5em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .download-btn:hover { background: #ff8800; }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #000a;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal {
+      background: #232323;
+      border-radius: 12px;
+      padding: 2em;
+      box-shadow: 0 4px 24px #0009;
+      max-width: 90vw;
+      min-width: 280px;
+      color: #fff;
+      text-align: center;
+    }
+    .modal button {
+      margin: 1em 0.5em 0 0.5em;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 6px;
+      background: #ff5500;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .modal button:hover { background: #ff8800; }
     @media (max-width: 600px) {
       .container {
         padding: 1em;
@@ -68,10 +114,41 @@
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/austin-watford-289522538&color=%23ff5500&auto_play=false&show_artwork=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
       </iframe>
     </div>
+    <div style="text-align:center; margin:1.5em 0;">
+      <button class="download-btn" onclick="showModal()">Download My Songs</button>
+    </div>
     <div class="credit">
       This page auto-updates from <a href="https://soundcloud.com/austin-watford-289522538" style="color:#ff5500;" target="_blank">my SoundCloud</a>.<br>
-      Built with ❤️ and hosted on <a href="https://pages.github.com/" style="color:#ff5500;" target="_blank">GitHub Pages</a>.
+      Built with ❤️ and hosted on <a href="https://pages.github.com/" style="color:#ff5500;" target="_blank">GitHub Pages</a>.<br>
+      Downloading is only allowed after subscribing to <a href="https://www.youtube.com/@AustinoFunk" style="color:#ff5500;" target="_blank">my YouTube channel</a>!
     </div>
   </div>
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+      <h2>Subscribe to Download</h2>
+      <p>Please subscribe to my YouTube channel before downloading my tracks.<br>
+      Click <b>Subscribe</b>, then <b>I Subscribed</b> to unlock the download link.<br><br>
+      <a href="https://www.youtube.com/@AustinoFunk" target="_blank" class="download-btn">Subscribe</a>
+      </p>
+      <button onclick="unlockDownload()">I Subscribed</button>
+      <button onclick="hideModal()">Cancel</button>
+      <div id="downloadSection" style="display:none; margin-top:1.5em;">
+        <p>Thank you! Here are my downloadable tracks:<br>
+        <a href="https://soundcloud.com/austin-watford-289522538" target="_blank" class="download-btn">Go to SoundCloud Downloads</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showModal() {
+      document.getElementById('modalOverlay').style.display = 'flex';
+    }
+    function hideModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+      document.getElementById('downloadSection').style.display = 'none';
+    }
+    function unlockDownload() {
+      document.getElementById('downloadSection').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
